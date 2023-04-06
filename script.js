@@ -3,6 +3,18 @@ const img = document.querySelector(".js-img");
 const sign = document.querySelector(".js-sign");
 const defaultSign = sign.innerHTML;
 
+let button = document.querySelector(".drag-and-drop__sign-browse");
+let input = document.querySelector("input");
+
+button.onclick = () => {
+	input.click();
+};
+
+input.addEventListener("change", function () {
+	file = this.files[0];
+	displayFile(file);
+});
+
 const dragOver = function (e) {
 	e.preventDefault();
 	// console.log("ok");
@@ -12,6 +24,10 @@ const dragDrop = function (e) {
 	e.preventDefault();
 	let file = e.dataTransfer.files[0];
 
+	displayFile(file);
+};
+
+const displayFile = function (file) {
 	let fileType = file.type;
 
 	let validExtensions = ["image/jpeg", "image/jpg", "imahe/png"];

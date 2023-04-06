@@ -44,6 +44,7 @@
   display: block;
   text-align: center;
   color: green;
+  cursor: pointer;
 }
 .drag-and-drop__transparent-sign {
   color: rgba(0, 0, 0, 0.5);
